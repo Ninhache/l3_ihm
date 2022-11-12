@@ -13,4 +13,3 @@ class SaveMenu(QMenu):
 
     def saveFile(self):
         self.parent.parent.centralWidget.saveFile()
-

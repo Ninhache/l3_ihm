@@ -13,9 +13,8 @@ class QuitMenu(QMenu):
         self.actions()[0].setShortcut("Ctrl+q")
         self.actions()[0].triggered.connect(self.action)
         
-
     def action(self):
-        self.parent.parent.close()
+        self.parent.parent.closeEvent(QCloseEvent())
         
 
 

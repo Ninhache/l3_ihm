@@ -16,4 +16,3 @@ class MenuBar(QMenuBar):
 		self.saveMenu = self.addMenu(SaveMenu.SaveMenu(self))
 		self.copyMenu = self.addMenu(CopyMenu.CopyMenu(self))
 		self.quitMenu = self.addMenu(QuitMenu.QuitMenu(self))
-
