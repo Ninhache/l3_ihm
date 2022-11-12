@@ -23,5 +23,3 @@ class MainWindow(QMainWindow):
 
 		# add things to the status bar
 		self.statusBar.showMessage("I'm useless atm")
-
-
