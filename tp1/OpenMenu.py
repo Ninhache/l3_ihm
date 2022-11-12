@@ -13,7 +13,8 @@ class OpenMenu(QMenu):
         self.addAction("Open File", self.openFile, QKeySequence.Open)
         
     def newFile(self):
-        print("new file")
+        self.parent.parent.centralWidget.newFile()
 
     def openFile(self):
-        print("open file")
+        self.parent.parent.centralWidget.openFile()
+        

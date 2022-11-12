@@ -6,12 +6,11 @@ class SaveMenu(QMenu):
         super().__init__(parent)
         self.parent = parent
         self.setTitle("Save")
-
         self.createMenu()
 
     def createMenu(self):
         self.addAction("save", self.saveFile, QKeySequence.Save)
 
     def saveFile(self):
-        print("save file")
+        self.parent.parent.centralWidget.saveFile()
 
