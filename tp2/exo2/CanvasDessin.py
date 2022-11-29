@@ -18,12 +18,15 @@ class CanvasDessin(QWidget):
 		self.state = State.IDLE
 		self.trace = []
 
+		self.color = QColor(0, 0, 0)
+		self.width = 5
+
 	def addPoint(self, point):
 		self.trace[-1].addPoint(point)
 
 	def mousePressEvent(self, event):
 		self.state = State.PRESSIN
-		self.trace.append(Trace.Trace(1, QColor(0, 0, 0)))
+		self.trace.append(Trace.Trace(self.width, self.color))
 		self.update()
 
 	def mouseReleaseEvent(self, event):
