@@ -40,12 +40,14 @@ class CanvasDessin(QWidget):
 	def paintEvent(self, event):
 		painter = QPainter(self)
 		painter.setRenderHint(QPainter.Antialiasing)
-		for t in self.trace:
-			painter.setPen(QPen(t.color, t.width, Qt.SolidLine))
-			for i in range(len(t.points) - 1):
-				painter.drawLine(t.points[i], t.points[i+1])
-		painter.end()
-		
-				
-		
+		for trace in self.trace:
+			painter.setPen(QPen(trace.color, trace.width))
+			path = QPainterPath()
+			
+			if len(trace.points) > 0:
+				path.moveTo(trace.points[0])
+				for point in trace.points:
+					path.lineTo(point)
+				painter.drawPath(path)
 
+		painter.end()
