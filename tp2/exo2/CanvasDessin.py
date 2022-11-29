@@ -54,3 +54,7 @@ class CanvasDessin(QWidget):
 				painter.drawPath(path)
 
 		painter.end()
+
+	def clear(self):
+		self.trace = []
+		self.update()
